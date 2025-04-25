@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+  
+    /* Language and Environment */
+    "target": "ES2022",// คอมไพล์ โค้ดให้อยู่ในรูปแบบ ECMAScript 2016
+    
+    /* Modules */
+    "module": "commonjs",   
+    "rootDir": "./",  
+
+    /* JavaScript Support */
+    "allowJs": true, // อนุญาตให้ ใช้ ไฟล์ .js ในโปรเจกต์
+    "outDir": "./dist", // ไฟล์ที่ถูกคอมไพล์จะเก็บไว้ ในโฟลเดอร์ dist       
+    "noEmitOnError": true, // หยุดสร้างไฟล์ .js หากมีข้อผิดพลาดในการคอมไพล์
+
+    /* Interop Constraints */
+    "esModuleInterop": true, // รองรับการใช้ ES Modules ร่วมกับ CommonJS
+    "forceConsistentCasingInFileNames": true, // บังคับให้ชื่อไฟล์ต้องใช้ตัวพิมพ์เล็ก-ใหญ่ให้ตรงกัน         
+    
+    /* Type Checking */
+    "strict": true,  //เปิ ดใช้งานการตรวจสอบประเภท (type-checking) ที่เข้มงวดใน TypeScript                             
+    "skipLibCheck": true // ข้ามการตรวจสอบประเภทในไฟล์ .d.ts เพื่อลดเวลาในการคอมไพล์                               
+  }
+}
