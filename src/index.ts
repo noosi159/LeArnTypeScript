@@ -26,7 +26,7 @@ console.log(viewCart());
 
 console.log('ข้อมูลตะกร้าโดยตรง:');
 console.log(cart);
-
+console.log('=====================================================================');
 //หัวข้อเรื่อง funtion
     //ฟังก์ชันมีค่าเริ่มต้น (Default Parameters)
 function greet(name: string = "Guest"): void {
@@ -35,6 +35,7 @@ function greet(name: string = "Guest"): void {
   
   greet();          // จะแสดง "Hello, Guest!"
   greet("John");    // จะแสดง "Hello, John!"
+  console.log('=====================================================================');
   //ฟังก์ชัน greet มีพารามิเตอร์ name ที่มีค่าเริ่มต้นเป็น "Guest"ถ้าเรียก greet() โดยไม่ส่งอาร์กิวเมนต์เข้าไป ฟังก์ชันจะใช้ค่าเริ่มต้น "Guest"
 
     //ฟังก์ชันที่รองรับค่าหลายประเภท (Union Type)
@@ -44,6 +45,7 @@ function greet(name: string = "Guest"): void {
       
       printValue("Hello");  // จะแสดง "Hello"
       printValue(123);      // จะแสดง "123"
+      console.log('=====================================================================');
 //ฟังก์ชัน printValue สามารถรับพารามิเตอร์ที่เป็น string หรือ number ฟังก์ชันนี้สามารถทำงานกับทั้งตัวเลขและข้อความได้   
 
     //การใช้ Arrow Function
@@ -52,6 +54,7 @@ function greet(name: string = "Guest"): void {
       };
       
       console.log(add(3, 4)); // ผลลัพธ์ 7
+      console.log('=====================================================================');
 //ฟังก์ชัน add ถูกเขียนในรูปแบบของ arrow function เป็นการประกาศฟังก์ชันที่รับพารามิเตอร์ a และ b และคืนค่าผลลัพธ์เป็นผลบวกของทั้งสองตัว
 
 
@@ -73,7 +76,9 @@ function greet(name: string = "Guest"): void {
       }
       
       const myCar = new Car("Toyota", "Camry");
-      myCar.displayInfo();  // สามารถเรียกใช้ฟังก์ชัน displayInfo() ได้
+      myCar.displayInfo();  
+      console.log('=====================================================================');
+      // สามารถเรียกใช้ฟังก์ชัน displayInfo() ได้
       
       // myCar.brand = "Honda"; // Error: 'brand' is private and only accessible within class 'Car'
       
@@ -102,6 +107,7 @@ function greet(name: string = "Guest"): void {
       
       const dog = new Dog("Buddy");
       dog.speak();  // "Buddy barks."
+      console.log('=====================================================================');
       
       //3.Polymorphism (การมีหลายรูปแบบ)
       class animal {
@@ -131,6 +137,7 @@ function greet(name: string = "Guest"): void {
       
       makeSound(wolf);  // "Wolf barks."
       makeSound(cat);  // "Cat meows."
+      console.log('=====================================================================');
       
       //4. Abstraction (การทำให้เป็นนามธรรม)
       abstract class Shape {
@@ -169,7 +176,7 @@ function greet(name: string = "Guest"): void {
       
       const circle = new Circle(3);
       circle.printArea();  // "Area: 28.274333882308138"
-      
+      console.log('=====================================================================');
 
 
 //Generic ใน TypeScript
@@ -181,6 +188,7 @@ function identity<T>(arg: T): T {
 console.log(identity(5));        // output: 5
 console.log(identity("Hello"));  // output: Hello
 console.log(identity(true));     // output: true
+console.log('=====================================================================');
 
     //2. Generic ในคลาส (Class Generics)
     class Box<T> {
@@ -200,6 +208,7 @@ console.log(identity(true));     // output: true
       
       const numberBox = new Box(123);
       console.log(numberBox.getValue()); // 123
+      console.log('=====================================================================');
 
       //.3. Generic ในอินเทอร์เฟซ (Interface Generics)
       interface Pair<T, U> {
@@ -212,7 +221,7 @@ console.log(identity(true));     // output: true
       
       console.log(stringNumberPair);
       console.log(booleanNumberPair);
-        
+      console.log('=====================================================================');
       
       //.4. Generic Constraints (ข้อจำกัดของ Generics)
       function merge<T extends object, U extends object>(obj1: T, obj2: U): T & U {
@@ -221,6 +230,7 @@ console.log(identity(true));     // output: true
       
       const mergedObj = merge({ name: "John" }, { age: 30 });
       console.log(mergedObj);  // { name: "John", age: 30 }
+      console.log('=====================================================================');
 
       //5.Using Multiple Generics
       function pair<T, U>(first: T, second: U): [T, U] {
@@ -229,6 +239,7 @@ console.log(identity(true));     // output: true
       
       const result = pair("Hello", 123);
       console.log(result);  // ["Hello", 123]
+console.log('=====================================================================');
 
       //6. Default Generic Types
       function wrap<T = string>(value: T): T {
@@ -237,9 +248,10 @@ console.log(identity(true));     // output: true
       
       console.log(wrap("Hello"));   // "Hello"
       console.log(wrap(123));       // 123
-    
+      console.log('=====================================================================');
+
+
       //7.ใช้ Generic กับ Utility Types
-      // ใช้ Generic กับ Partial
 function updateObject<T>(obj: T, updates: Partial<T>): T {
     return { ...obj, ...updates };
   }
@@ -247,7 +259,8 @@ function updateObject<T>(obj: T, updates: Partial<T>): T {
   const user = { name: "John", age: 25 };
   const updatedUser = updateObject(user, { age: 26 });
   console.log(updatedUser);  // { name: "John", age: 26 }
-  
+  console.log('=====================================================================');
+
   // ใช้ Generic กับ Record
   type Product = { id: number; name: string };
   type ProductMap = Record<string, Product>;
@@ -257,7 +270,7 @@ function updateObject<T>(obj: T, updates: Partial<T>): T {
     p2: { id: 2, name: "Product 2" }
   };
   console.log(products);
-
+console.log('=====================================================================');
 
 
 //เปรียบเทียบ Generic (T) vs any vs unknown ใน TypeScript
@@ -268,6 +281,7 @@ value = "Hello";  // ไม่มีปัญหา
 value = true;     // ไม่มีปัญหา
 
 console.log(value.someProperty); // ไม่มีการแจ้งเตือนจาก TypeScript
+console.log('=====================================================================');
 
   //2. unknown
   let value1: unknown = 10;
@@ -280,7 +294,7 @@ console.log(value.someProperty); // ไม่มีการแจ้งเต�
   } else {
     console.log("Not a string");
   }
-  
+  console.log('=====================================================================');
 
   //3.Generic (T)
   function identity1<T>(value2: T): T {
@@ -289,4 +303,4 @@ console.log(value.someProperty); // ไม่มีการแจ้งเต�
   
   let numberValue2 = identity1(10);   // number
   let stringValue2 = identity1("Hello");  // string
-  
+  console.log('=====================================================================');
