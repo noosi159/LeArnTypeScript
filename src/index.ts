@@ -20,7 +20,7 @@ const discountedP2 = discountProduct(p2, 10); // ลด 10%
 
 addItem(p1);
 addItem(discountedP2);
-
+console.log('Import และ Export');
 console.log('สินค้าในตะกร้า:');
 console.log(viewCart());
 
@@ -32,7 +32,7 @@ console.log('===================================================================
 function greet(name: string = "Guest"): void {
     console.log(`Hello, ${name}!`);
   }
-  
+  console.log('ฟังก์ชันมีค่าเริ่มต้น (Default Parameters');
   greet();          // จะแสดง "Hello, Guest!"
   greet("John");    // จะแสดง "Hello, John!"
   console.log('=====================================================================');
@@ -42,7 +42,7 @@ function greet(name: string = "Guest"): void {
     function printValue(value: string | number): void {
         console.log(value);
       }
-      
+      console.log('ฟังก์ชันที่รองรับค่าหลายประเภท (Union Type)');
       printValue("Hello");  // จะแสดง "Hello"
       printValue(123);      // จะแสดง "123"
       console.log('=====================================================================');
@@ -52,7 +52,7 @@ function greet(name: string = "Guest"): void {
     const add = (a: number, b: number): number => {
         return a + b;
       };
-      
+      console.log('การใช้ Arrow Function');
       console.log(add(3, 4)); // ผลลัพธ์ 7
       console.log('=====================================================================');
 //ฟังก์ชัน add ถูกเขียนในรูปแบบของ arrow function เป็นการประกาศฟังก์ชันที่รับพารามิเตอร์ a และ b และคืนค่าผลลัพธ์เป็นผลบวกของทั้งสองตัว
@@ -74,7 +74,7 @@ function greet(name: string = "Guest"): void {
           console.log(`Brand: ${this.brand}, Model: ${this.model}`);
         }
       }
-      
+      console.log('OOP 1. Encapsulation (การห่อหุ้มข้อมูล)');
       const myCar = new Car("Toyota", "Camry");
       myCar.displayInfo();  
       console.log('=====================================================================');
@@ -104,7 +104,7 @@ function greet(name: string = "Guest"): void {
           console.log(`${this.name} barks.`);
         }
       }
-      
+      console.log('OOP 2. Inheritance (การสืบทอด)');
       const dog = new Dog("Buddy");
       dog.speak();  // "Buddy barks."
       console.log('=====================================================================');
@@ -131,7 +131,7 @@ function greet(name: string = "Guest"): void {
       function makeSound(animal: animal): void {
         animal.speak();  // Polymorphism: จะเรียก speak() ของชนิดที่ถูกส่งเข้าไป
       }
-      
+      console.log('OOP 3.Polymorphism (การมีหลายรูปแบบ)');
       const wolf = new Wolf();
       const cat = new Cat();
       
@@ -173,7 +173,7 @@ function greet(name: string = "Guest"): void {
       
       const rectangle = new Rectangle(5, 10);
       rectangle.printArea();  // "Area: 50"
-      
+      console.log('OOP 4. Abstraction (การทำให้เป็นนามธรรม)');
       const circle = new Circle(3);
       circle.printArea();  // "Area: 28.274333882308138"
       console.log('=====================================================================');
@@ -184,7 +184,7 @@ function greet(name: string = "Guest"): void {
 function identity<T>(arg: T): T {
   return arg;
 }
-
+console.log('1.Generic ในฟังก์ชัน (Function Generics) ');
 console.log(identity(5));        // output: 5
 console.log(identity("Hello"));  // output: Hello
 console.log(identity(true));     // output: true
@@ -202,7 +202,7 @@ console.log('===================================================================
           return this.value;
         }
       }
-      
+      console.log('2. Generic ในคลาส (Class Generics) ');
       const stringBox = new Box("Hello");
       console.log(stringBox.getValue()); // "Hello"
       
@@ -218,7 +218,7 @@ console.log('===================================================================
       
       const stringNumberPair: Pair<string, number> = { first: "Hello", second: 5 };
       const booleanNumberPair: Pair<boolean, number> = { first: true, second: 10 };
-      
+      console.log('3. Generic ในอินเทอร์เฟซ (Interface Generics) ');
       console.log(stringNumberPair);
       console.log(booleanNumberPair);
       console.log('=====================================================================');
@@ -227,7 +227,7 @@ console.log('===================================================================
       function merge<T extends object, U extends object>(obj1: T, obj2: U): T & U {
         return { ...obj1, ...obj2 };
       }
-      
+      console.log('4. Generic Constraints (ข้อจำกัดของ Generics)');
       const mergedObj = merge({ name: "John" }, { age: 30 });
       console.log(mergedObj);  // { name: "John", age: 30 }
       console.log('=====================================================================');
@@ -236,7 +236,7 @@ console.log('===================================================================
       function pair<T, U>(first: T, second: U): [T, U] {
         return [first, second];
       }
-      
+      console.log('5.Using Multiple Generics');
       const result = pair("Hello", 123);
       console.log(result);  // ["Hello", 123]
 console.log('=====================================================================');
@@ -245,7 +245,7 @@ console.log('===================================================================
       function wrap<T = string>(value: T): T {
         return value;
       }
-      
+      console.log('6. Default Generic Types');
       console.log(wrap("Hello"));   // "Hello"
       console.log(wrap(123));       // 123
       console.log('=====================================================================');
@@ -255,13 +255,13 @@ console.log('===================================================================
 function updateObject<T>(obj: T, updates: Partial<T>): T {
     return { ...obj, ...updates };
   }
-  
+  console.log('7.ใช้ Generic กับ Utility Types');
   const user = { name: "John", age: 25 };
   const updatedUser = updateObject(user, { age: 26 });
   console.log(updatedUser);  // { name: "John", age: 26 }
   console.log('=====================================================================');
 
-  // ใช้ Generic กับ Record
+  // 8.ใช้ Generic กับ Record
   type Product = { id: number; name: string };
   type ProductMap = Record<string, Product>;
   
@@ -269,6 +269,7 @@ function updateObject<T>(obj: T, updates: Partial<T>): T {
     p1: { id: 1, name: "Product 1" },
     p2: { id: 2, name: "Product 2" }
   };
+  console.log('8.ใช้ Generic กับ Record');
   console.log(products);
 console.log('=====================================================================');
 
@@ -279,7 +280,7 @@ console.log('===================================================================
   let value: any = 10;
 value = "Hello";  // ไม่มีปัญหา
 value = true;     // ไม่มีปัญหา
-
+console.log('1. any');
 console.log(value.someProperty); // ไม่มีการแจ้งเตือนจาก TypeScript
 console.log('=====================================================================');
 
@@ -287,7 +288,7 @@ console.log('===================================================================
   let value1: unknown = 10;
   value1 = "Hello";  // ไม่มีปัญหา
   value1 = true;     // ไม่มีปัญหา
-  
+  console.log('2. unknown');
   // ต้องตรวจสอบประเภทก่อนการใช้งาน
   if (typeof value1 === "string") {
     console.log(value1.length);  // ข้อความจะถูกตรวจสอบว่าเป็น string ก่อน
@@ -300,7 +301,6 @@ console.log('===================================================================
   function identity1<T>(value2: T): T {
     return value2;
   }
-  
+  console.log('3.Generic (T)');
   let numberValue2 = identity1(10);   // number
   let stringValue2 = identity1("Hello");  // string
-  console.log('=====================================================================');
