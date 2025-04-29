@@ -8,7 +8,7 @@ import { addToCart as addItem, getCart as viewCart } from './cart';
 import cart from './cart';
 
 // 4. Import เป็น Object
-import * as ProductUtils from './product';
+import * as ProductUtils from './product'; //นำเข้าทุกอย่างใน file Product มาใส่ตัวแปล ProductUtils 
 
 
 // เริ่มใช้งาน
@@ -22,10 +22,10 @@ addItem(p1);
 addItem(discountedP2);
 console.log('Import และ Export');
 console.log('สินค้าในตะกร้า:');
-console.log(viewCart());
+console.log(viewCart()); //ผ่าน funtion
 
 console.log('ข้อมูลตะกร้าโดยตรง:');
-console.log(cart);
+console.log(cart); //เข้าถึง ข้อมูลตะกร้าโดยตรง คือการเข้าถึงตัวแปร cart โดยไม่ผ่านฟังก์ชันใด ๆ
 console.log('=====================================================================');
 //หัวข้อเรื่อง funtion
     //ฟังก์ชันมีค่าเริ่มต้น (Default Parameters)
